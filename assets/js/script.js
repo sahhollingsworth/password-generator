@@ -1,7 +1,9 @@
 // defines generateBtn variable as the contents of the 1st element of id=generate, which is the generate password button
 var generateBtn = document.querySelector("#generate");
-
 // 
+
+//instantiates Password variable to prevent empty string output to user
+//var password = "";
 
 // excluded space " " as an special character option for better password usability & readability
 var poolSpecial = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<",">","=","?","@","[","]","/","^","_","`","{","}","~"];
@@ -34,25 +36,25 @@ function generatePassword() {
   // User prompted to choose if they want special characters in generated password
   var charsSpecial = confirm("Click OK to confirm including special characters.");
   if (charsSpecial === true) {
-    pool.push(poolSpecial);
+    pool.push(...poolSpecial);
   }
 
   // User prompted to choose if they want numbers in generated password
   var charsNum = confirm("Click OK to confirm including numeric characters.");
   if (charsNum === true) {
-    pool.push(poolNum);
+    pool.push(...poolNum);
   }
 
   // User prompted to choose if they want uppercase characters in generated password
   var charsLower = confirm("Click OK to confirm including lowercase characters.");
   if (charsLower === true) {
-    pool.push(poolLower);
+    pool.push(...poolLower);
   } 
 
   // User prompted to choose if they want uppercase characters in generated password
   var charsUpper = confirm("Click OK to confirm including uppercase characters.");
   if (charsUpper === true) {
-    pool.push(poolUpper);
+    pool.push(...poolUpper);
   } 
 
   //Alerts if user hasn't selected at least 1 character option
@@ -62,9 +64,11 @@ function generatePassword() {
   
   //for loop to iterate through all values in the pool array, containing all character options for generated password
   for (var i = 0; i <= passwordLength; i++) {
-    var passwordTest = pool[Math.floor(Math.random() * pool.length)];
-    console.log(passwordTest);
+    // var letter = pool[Math.floor(Math.random() * pool.length)];
+    // password.concat("a");
+    password.concat(pool[Math.floor(Math.random() * pool.length)]);
   }
+  console.log(password);
   return password
 }
 
