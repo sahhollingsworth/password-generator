@@ -19,12 +19,15 @@ function generatePassword() {
   /* This if statement validates that user submission for length is a numerical value. If isNaN returns false, then value is a number. */
   if (isNaN(passwordLength)) {
     alert("Password length must be a number between 8 and 128.");
+    return generatePassword();
   } else if (passwordLength >= 8 && passwordLength <= 128) {
   /* Alerts user if doesn't meet the minimum or maximum character count constraint */
   } else if (passwordLength > 128) {
     alert("Password can include a maximum of 128 characters.");
+    return generatePassword();
   } else if (passwordLength < 8) {
     alert("Password must include at least 8 characters.");
+    return generatePassword();
   }
 
 
@@ -56,6 +59,32 @@ function generatePassword() {
   if (charsSpecial === false && charsNum === false && charsLower === false && charsUpper === false) {
     alert("You must choose at least one character type to ensure a secure password. Please try again.");
   }
+
+  // some type of randomizer function?
+  // characterTEST = Math.floor(Math.random() * pool.length);
+  // console.log(pool);
+  // console.log((typeof characterTEST) + characterTEST);
+
+  // //for loop to iterate through all values in the pool array, containing all character options for generated password
+  // for (var i = 0; i <= passwordLength; i++) {
+  //   passwordTest = Math.floor(Math.random() * pool.length);
+  //   console.log(passwordTest);
+  // }
+
+  // //some type of randomizer function? yyyppppppp
+  // function characterTEST (array) {
+  //   return array[Math.floor(Math.random() * array.length]
+  // }
+  
+  // console.log(pool);
+  // console.log((typeof characterTEST) + characterTEST); yyyyyppppp
+
+  //for loop to iterate through all values in the pool array, containing all character options for generated password
+  for (var i = 0; i <= passwordLength; i++) {
+    var passwordTest = pool[Math.floor(Math.random() * pool.length)];
+    console.log(passwordTest);
+  }
+
 }
 
 // Write password to the #password input
