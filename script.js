@@ -59,32 +59,13 @@ function generatePassword() {
   if (charsSpecial === false && charsNum === false && charsLower === false && charsUpper === false) {
     alert("You must choose at least one character type to ensure a secure password. Please try again.");
   }
-
-  // some type of randomizer function?
-  // characterTEST = Math.floor(Math.random() * pool.length);
-  // console.log(pool);
-  // console.log((typeof characterTEST) + characterTEST);
-
-  // //for loop to iterate through all values in the pool array, containing all character options for generated password
-  // for (var i = 0; i <= passwordLength; i++) {
-  //   passwordTest = Math.floor(Math.random() * pool.length);
-  //   console.log(passwordTest);
-  // }
-
-  // //some type of randomizer function? yyyppppppp
-  // function characterTEST (array) {
-  //   return array[Math.floor(Math.random() * array.length]
-  // }
   
-  // console.log(pool);
-  // console.log((typeof characterTEST) + characterTEST); yyyyyppppp
-
   //for loop to iterate through all values in the pool array, containing all character options for generated password
   for (var i = 0; i <= passwordLength; i++) {
     var passwordTest = pool[Math.floor(Math.random() * pool.length)];
     console.log(passwordTest);
   }
-
+  return password
 }
 
 // Write password to the #password input
