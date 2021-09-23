@@ -23,4 +23,4 @@ Sarah Hollingsworth
 * [LinkedIn](https://www.linkedin.com/in/sarahhollingsworth/)
 
 ## Acknowledgments
-* TBD
+* Special characters set used in the script.js is from [the OWASP foundation](https://owasp.org/www-community/password-special-characters)
