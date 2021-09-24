@@ -2,9 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 // 
 
-//instantiates Password variable to prevent empty string output to user
-//var password = "";
-
 // excluded space " " as an special character option for better password usability & readability
 var poolSpecial = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<",">","=","?","@","[","]","/","^","_","`","{","}","~"];
 var poolNum = ["0","1","2","3","4","5","6","7","8","9"];
@@ -17,7 +14,7 @@ var pool = [];
 // Function to generate random password based on user input
 function generatePassword() {
   // User prompted to choose how many characters are in generated password
-  var passwordLength = prompt("In the range of 8 to 128 characters, how many characters would you like your password to contain?");
+    var passwordLength = prompt("In the range of 8 to 128 characters, how many characters would you like your password to contain?");
   /* This if statement validates that user submission for length is a numerical value. If isNaN returns false, then value is a number. */
   if (isNaN(passwordLength)) {
     alert("Password length must be a number between 8 and 128.");
@@ -62,14 +59,17 @@ function generatePassword() {
     alert("You must choose at least one character type to ensure a secure password. Please try again.");
   }
   
-  //for loop to iterate through all values in the pool array, containing all character options for generated password
-  for (var i = 0; i <= passwordLength; i++) {
-    // var letter = pool[Math.floor(Math.random() * pool.length)];
-    // password.concat("a");
-    password.concat(pool[Math.floor(Math.random() * pool.length)]);
+  // Logic below to end of function is resonsible for providing the actual set of characters for the password from the pool array that now contains all possible characters as define by user confirm prompts
+  var password = [];
+
+  //for loop to iterates through all values in the pool array to define the password array. 
+  for (var i = 0; i < passwordLength; i++) {
+    //Each time the for loop runs, 1 character is randomly chosen from the pool array and assigned the the charSelect variable. The charSelect variable is then added to the password array
+    var charSelect = pool[Math.floor(Math.random() * pool.length)];
+    password.push(charSelect);
   }
-  console.log(password);
-  return password
+  //Convert password array elements into a string,  the expected format for end user. One parameter "" is included to exclude commas in the resulting string created.
+  return (password.join(""));
 }
 
 // Write password to the #password input
@@ -81,6 +81,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-// When a user clicks on the #generate element (the Generate Password button), the writePassword function is run
+// Event listener to generate button. When a user clicks on the #generate element (the Generate Password button), the writePassword function is run
 generateBtn.addEventListener("click", writePassword);
