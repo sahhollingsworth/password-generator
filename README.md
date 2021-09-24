@@ -1,9 +1,11 @@
 # Employee Password Generator
 
-TBD
+The Password Generator web application enables employees to generate secure, random passwords based on criteria they define: length, uppercase/lowercase use, special character use, and number use. 
+
+It features dynamically updating HTML and CSS, powered by JavaScript code. This runs in any modern web browser and leverages a responsive user interface to adapt to multiple screen sizes.
 
 ## Deployed site
-[Click here to visit my deployed portfolio application.](https://sahhollingsworth.github.io/password-generator/ "Password generator web application link")
+[Click here to visit deployed Password Generator application.](https://sahhollingsworth.github.io/password-generator/ "Password generator web application link")
 
 ![Image]( "Password Generator web application screenshot")
 

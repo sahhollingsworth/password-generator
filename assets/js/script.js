@@ -8,9 +8,6 @@ var poolNum = ["0","1","2","3","4","5","6","7","8","9"];
 var poolLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var poolUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-// Empty array that will act as bucket for all potential characters for password creation, as determine by user prompts
-var pool = [];
-
 // Function to generate random password based on user input
 function generatePassword() {
   // User prompted to choose how many characters are in generated password
@@ -29,6 +26,8 @@ function generatePassword() {
     return generatePassword();
   }
 
+  // Empty array that will act as bucket for all potential characters for password creation, as determine by user prompts. Inside of function, because the array must be empty every time function runs to avoid include character preference from previous runs
+  var pool = [];
 
   // User prompted to choose if they want special characters in generated password
   var charsSpecial = confirm("Click OK to confirm including special characters.");
@@ -53,7 +52,7 @@ function generatePassword() {
   if (charsUpper === true) {
     pool.push(...poolUpper);
   } 
-
+  
   //Alerts if user hasn't selected at least 1 character option
   if (charsSpecial === false && charsNum === false && charsLower === false && charsUpper === false) {
     alert("You must choose at least one character type to ensure a secure password. Please try again.");
