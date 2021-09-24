@@ -7,7 +7,7 @@ It features dynamically updating HTML and CSS, powered by JavaScript code. This 
 ## Deployed site
 [Click here to visit deployed Password Generator application.](https://sahhollingsworth.github.io/password-generator/ "link to Password Generator web application")
 
-![Image](.assets/images/password-generator_preview.gif "screenshot of Password Generator web application")
+![Image](./assets/images/password-generator_preview.gif "screenshot of Password Generator web application")
 
 ## Summary
 * All user input is driven by window confirm() and alert() methods for all user input. Password definition is heavily reliant on use of arrays.
